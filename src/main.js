@@ -50,6 +50,10 @@ async function handleSearch(event) {
 
     if (data.totalHits > perPage) {
       showLoadMoreButton();
+    } else {
+      iziToast.info({
+        message: "We're sorry, but you've reached the end of search results.",
+      });
     }
   } catch (error) {
     iziToast.error({
