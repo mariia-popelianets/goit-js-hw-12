@@ -8,7 +8,7 @@ export default defineConfig(({ command }) => {
     base: '/goit-js-hw-12/',
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
-      global: 'window', // Вирішує помилку з SimpleLightbox
+      global: 'window', 
     },
     root: 'src',
     build: {
