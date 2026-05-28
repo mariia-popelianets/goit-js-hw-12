@@ -1,6 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+// Змінено шляхи імпорту з урахуванням папки src
 import { getImagesByQuery } from './js/pixabay-api.js';
 import {
   createGallery,
@@ -24,7 +25,10 @@ loadMoreBtn.addEventListener('click', handleLoadMore);
 async function handleSearch(event) {
   event.preventDefault();
 
-  searchQuery = event.currentTarget.elements.userQuery.value.trim();
+  // Надійне зчитування значення форми через FormData
+  const formData = new FormData(event.currentTarget);
+  searchQuery = formData.get('userQuery').trim();
+
   if (!searchQuery) {
     iziToast.warning({ message: 'Please enter a search query' });
     return;

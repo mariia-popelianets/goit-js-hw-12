@@ -8,9 +8,9 @@ export default defineConfig(({ command }) => {
     base: '/goit-js-hw-12/',
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
-      global: 'window', // Вирішує помилку з SimpleLightbox
+      global: 'window',
     },
-    root: 'src',
+    root: 'src', // Вказуємо, що розробка йде в папці src
     build: {
       sourcemap: true,
       rollupOptions: {
@@ -21,7 +21,7 @@ export default defineConfig(({ command }) => {
           entryFileNames: 'assets/[name]-[hash].js',
         },
       },
-      outDir: '../dist',
+      outDir: '../dist', // Виходимо на рівень вище, щоб папка dist створилася в корені
       emptyOutDir: true,
     },
     plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
