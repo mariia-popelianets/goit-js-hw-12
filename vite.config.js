@@ -8,7 +8,11 @@ export default defineConfig(({ command }) => {
     base: '/goit-js-hw-12/',
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
+<<<<<<< HEAD
       global: 'window',
+=======
+      global: 'window', 
+>>>>>>> 5ccd1a4f6e2387ec33c2bd3760e3251af58b982c
     },
     root: 'src', // Вказуємо, що розробка йде в папці src
     build: {
